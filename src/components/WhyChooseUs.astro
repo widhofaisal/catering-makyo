@@ -1,0 +1,29 @@
+---
+import Container from './ui/Container.astro';
+import SectionHeading from './ui/SectionHeading.astro';
+import IconCard from './ui/IconCard.astro';
+import { whyChooseUs } from '../data/company';
+---
+
+<section class="bg-cream py-24 sm:py-32">
+  <Container>
+    <SectionHeading
+      eyebrow="Mengapa Memilih Kami"
+      title="Kepercayaan yang Dijaga Lebih dari 50 Tahun"
+      subtitle="Setiap hidangan dibuat dengan standar yang sama sejak Mak Yo pertama kali memasak untuk tetangganya."
+    />
+
+    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        whyChooseUs.map((item, i) => (
+          <IconCard
+            icon={item.icon}
+            title={item.title}
+            description={item.description}
+            style={`animation-delay:${i * 80}ms`}
+          />
+        ))
+      }
+    </div>
+  </Container>
+</section>

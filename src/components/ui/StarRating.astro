@@ -1,0 +1,15 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  rating: number;
+  class?: string;
+}
+
+const { rating, class: className = '' } = Astro.props;
+const stars = Array.from({ length: 5 }, (_, i) => i < Math.round(rating));
+---
+
+<div class:list={['flex items-center gap-1 text-gold', className]} role="img" aria-label={`Rating ${rating} dari 5 bintang`}>
+  {stars.map((filled) => <Icon name="star" class:list={['h-4 w-4', filled ? 'text-gold' : 'text-ink/15']} />)}
+</div>

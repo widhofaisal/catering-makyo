@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+
+@import '@fontsource-variable/fraunces';
+@import '@fontsource-variable/plus-jakarta-sans';
+
+@theme {
+  --color-white: #ffffff;
+  --color-cream: #fbf6ee;
+  --color-cream-dark: #f3ead9;
+
+  --color-gold: #c29a4b;
+  --color-gold-deep: #9c7a3c;
+  --color-gold-light: #e8d5a8;
+
+  --color-green: #6e8f5c;
+  --color-green-deep: #55703f;
+  --color-green-light: #dbe6d2;
+
+  --color-ink: #33312e;
+  --color-ink-soft: #66625c;
+
+  --font-display: 'Fraunces Variable', ui-serif, Georgia, serif;
+  --font-body: 'Plus Jakarta Sans Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  --shadow-soft: 0 4px 24px -4px rgb(51 49 46 / 0.08);
+  --shadow-soft-lg: 0 12px 48px -12px rgb(51 49 46 / 0.16);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background-color: var(--color-white);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background-color: var(--color-gold-light);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-deep);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    z-index: 100;
+    background-color: var(--color-white);
+    color: var(--color-ink);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-soft-lg);
+    transition: top 0.2s ease;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+ * Visible by default so content never depends on JS to be seen (no-JS,
+ * slow script load, or a screenshot/crawler that doesn't scroll all still
+ * see full content). JS opts elements into the hidden-then-fade-in state
+ * just before observing them — see src/scripts/reveal.ts.
+ */
+[data-reveal].reveal-armed {
+  opacity: 0;
+  transform: translateY(1.5rem);
+}
+
+[data-reveal].reveal-visible {
+  animation: fade-up 0.7s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal].reveal-armed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.load-fade-up {
+  opacity: 0;
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .load-fade-up {
+    opacity: 1;
+    animation: none;
+  }
+}

@@ -1,0 +1,32 @@
+---
+import Container from './ui/Container.astro';
+import SectionHeading from './ui/SectionHeading.astro';
+import { galleryImages } from '../data/gallery';
+---
+
+<section id="gallery" class="bg-cream py-24 sm:py-32">
+  <Container>
+    <SectionHeading
+      eyebrow="Galeri"
+      title="Momen yang Kami Hadirkan"
+      subtitle="Sebagian dokumentasi hidangan dan acara yang telah dipercayakan kepada Catering Mak Yo."
+    />
+
+    <div class="mt-16 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5 [&>*]:break-inside-avoid">
+      {
+        galleryImages.map((image, i) => (
+          <div class="overflow-hidden rounded-2xl shadow-soft" data-reveal style={`animation-delay:${(i % 6) * 60}ms`}>
+            <img
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
+              loading="lazy"
+              class="h-auto w-full object-cover transition-transform duration-500 hover:scale-105"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </Container>
+</section>

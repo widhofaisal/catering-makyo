@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import OurStory from '../components/OurStory.astro';
+import WhyChooseUs from '../components/WhyChooseUs.astro';
+import MenuSection from '../components/MenuSection.astro';
+import Gallery from '../components/Gallery.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CtaSection from '../components/CtaSection.astro';
+import Footer from '../components/Footer.astro';
+import { company } from '../data/company';
+
+const title = `${company.name} — ${company.tagline}`;
+---
+
+<Layout title={title}>
+  <Navbar />
+  <main id="main">
+    <Hero />
+    <OurStory />
+    <WhyChooseUs />
+    <MenuSection />
+    <Gallery />
+    <Testimonials />
+    <CtaSection />
+  </main>
+  <Footer />
+</Layout>

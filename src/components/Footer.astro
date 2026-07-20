@@ -1,0 +1,96 @@
+---
+import Container from './ui/Container.astro';
+import Icon from './ui/Icon.astro';
+import GrandmaPortrait from './GrandmaPortrait.astro';
+import { company, waLink } from '../data/company';
+
+const hasSocial = Boolean(company.social.instagram || company.social.facebook);
+const currentYear = new Date().getFullYear();
+---
+
+<footer id="contact" class="bg-ink text-cream">
+  <Container class="py-20">
+    <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        <div class="flex items-center gap-3">
+          <GrandmaPortrait size={44} showRibbon={false} class="shrink-0" />
+          <span class="font-display text-xl font-semibold text-white">Catering Mak Yo</span>
+        </div>
+        <p class="mt-4 max-w-md leading-relaxed text-cream/70">{company.description}</p>
+
+        <dl class="mt-8 space-y-4 text-sm">
+          <div class="flex items-start gap-3">
+            <Icon name="map-pin" class="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+            <dd>{company.address.full}</dd>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="phone" class="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+            <dd>
+              <a href={`tel:${company.phoneE164}`} class="hover:text-gold">{company.phoneDisplay}</a>
+            </dd>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="whatsapp" class="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+            <dd>
+              <a href={waLink('Halo, saya ingin bertanya tentang Catering Mak Yo.')} target="_blank" rel="noopener noreferrer" class="hover:text-gold">
+                Chat WhatsApp
+              </a>
+            </dd>
+          </div>
+          <div class="flex items-start gap-3">
+            <Icon name="clock" class="mt-0.5 h-5 w-5 shrink-0 text-gold" />
+            <dd>{company.hoursNote}</dd>
+          </div>
+        </dl>
+
+        {
+          hasSocial && (
+            <div class="mt-8 flex gap-3">
+              {company.social.instagram && (
+                <a
+                  href={company.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram Catering Mak Yo"
+                  class="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-colors hover:border-gold hover:text-gold"
+                >
+                  <Icon name="instagram" class="h-5 w-5" />
+                </a>
+              )}
+              {company.social.facebook && (
+                <a
+                  href={company.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook Catering Mak Yo"
+                  class="flex h-10 w-10 items-center justify-center rounded-full border border-cream/20 transition-colors hover:border-gold hover:text-gold"
+                >
+                  <Icon name="facebook" class="h-5 w-5" />
+                </a>
+              )}
+            </div>
+          )
+        }
+      </div>
+
+      <div class="overflow-hidden rounded-3xl border border-cream/10">
+        <iframe
+          src={company.mapsEmbedUrl}
+          title={`Lokasi ${company.name} di Google Maps`}
+          width="100%"
+          height="320"
+          style="border:0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 text-sm text-cream/60 sm:flex-row">
+      <p>&copy; {currentYear} {company.name}. Semua hak dilindungi.</p>
+      <a href={company.mapsShareUrl} target="_blank" rel="noopener noreferrer" class="hover:text-gold">
+        Lihat di Google Maps
+      </a>
+    </div>
+  </Container>
+</footer>

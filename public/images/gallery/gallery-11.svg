@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700" role="img" aria-label="Placeholder foto Catering Mak Yo">
+  <defs>
+    <linearGradient id="grad-gallery-11" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FBF6EE" />
+      <stop offset="100%" stop-color="#DBE6D2" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="700" fill="url(#grad-gallery-11)" />
+  <rect x="8" y="8" width="784" height="684" fill="none" stroke="#55703F" stroke-opacity="0.35" stroke-width="1.5" />
+  <g transform="translate(302, 252) scale(1.9600000000000002)" color="#55703F">
+    
+  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 52 h44 a2 2 0 0 1 2 2 c0 12 -10 22 -24 22 s-24 -10 -24 -22 a2 2 0 0 1 2 -2 Z" />
+    <path d="M24 52 h52" />
+    <path d="M42 30 c-4 4 -4 8 0 12" />
+    <path d="M52 30 c-4 4 -4 8 0 12" />
+    <path d="M62 30 c-4 4 -4 8 0 12" />
+  </g>
+
+  </g>
+  
+</svg>
