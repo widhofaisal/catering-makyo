@@ -4,24 +4,27 @@ import type { Testimonial } from '../data/testimonials';
 
 interface Props {
   testimonial: Testimonial;
+  index?: number;
   style?: string;
 }
 
-const { testimonial, style } = Astro.props;
+const { testimonial, index = 0, style } = Astro.props;
 const initial = testimonial.name.charAt(0).toUpperCase();
+const isGold = index % 2 === 0;
 ---
 
 <figure
-  class="flex h-full flex-col rounded-3xl border border-ink/5 bg-white p-8 shadow-soft"
+  class="relative flex h-full flex-col overflow-hidden rounded-3xl border border-ink/5 bg-white p-8 shadow-soft"
   data-reveal
   style={style}
 >
-  <StarRating rating={testimonial.rating} class="mb-4" />
-  <blockquote class="flex-1 text-ink-soft leading-relaxed">
+  <span class="font-display absolute -right-2 -top-6 text-8xl text-gold-light/60" aria-hidden="true">&rdquo;</span>
+  <StarRating rating={testimonial.rating} class="relative mb-4" />
+  <blockquote class="relative flex-1 text-ink-soft leading-relaxed">
     &ldquo;{testimonial.quote}&rdquo;
   </blockquote>
-  <figcaption class="mt-6 flex items-center gap-3 border-t border-ink/5 pt-5">
-    <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-green-light font-display text-lg font-semibold text-green-deep">
+  <figcaption class="relative mt-6 flex items-center gap-3 border-t border-ink/5 pt-5">
+    <span class={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full font-display text-lg font-semibold ${isGold ? 'bg-gold-light text-gold-deep' : 'bg-green-light text-green-deep'}`}>
       {initial}
     </span>
     <div>

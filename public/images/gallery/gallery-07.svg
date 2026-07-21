@@ -1,22 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Placeholder foto Catering Mak Yo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" width="800" height="800" role="img" aria-label="Snack Box">
   <defs>
-    <linearGradient id="grad-gallery-7" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="grad-gallery-07" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FBF6EE" />
-      <stop offset="100%" stop-color="#DBE6D2" />
+      <stop offset="100%" stop-color="#E8D5A8" />
     </linearGradient>
   </defs>
-  <rect width="800" height="800" fill="url(#grad-gallery-7)" />
-  <rect x="8" y="8" width="784" height="784" fill="none" stroke="#55703F" stroke-opacity="0.35" stroke-width="1.5" />
-  <g transform="translate(288, 288) scale(2.24)" color="#55703F">
-    
-  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M28 52 h44 a2 2 0 0 1 2 2 c0 12 -10 22 -24 22 s-24 -10 -24 -22 a2 2 0 0 1 2 -2 Z" />
-    <path d="M24 52 h52" />
-    <path d="M42 30 c-4 4 -4 8 0 12" />
-    <path d="M52 30 c-4 4 -4 8 0 12" />
-    <path d="M62 30 c-4 4 -4 8 0 12" />
+  <rect width="800" height="800" fill="url(#grad-gallery-07)" />
+  <rect x="8" y="8" width="784" height="784" fill="none" stroke="#9C7A3C" stroke-opacity="0.35" stroke-width="1.5" />
+  <circle cx="400" cy="360" r="172.79999999999998" fill="#9C7A3C" fill-opacity="0.12" />
+  <g transform="translate(280, 240) scale(2.4)" fill="none" stroke="#9C7A3C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M50 24 a26 26 0 1 0 0.01 0 Z" />
+    <circle cx="40" cy="42" r="2.4" fill="currentColor" stroke="none" />
+    <circle cx="59" cy="46" r="2.4" fill="currentColor" stroke="none" />
+    <circle cx="45" cy="59" r="2.4" fill="currentColor" stroke="none" />
+    <circle cx="61" cy="61" r="2.4" fill="currentColor" stroke="none" />
   </g>
-
-  </g>
-  
+  <text x="400" y="576" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="600" fill="#9C7A3C">Snack Box</text>
 </svg>

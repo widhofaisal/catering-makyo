@@ -1,6 +1,7 @@
 ---
 import Container from './ui/Container.astro';
 import SectionHeading from './ui/SectionHeading.astro';
+import Icon from './ui/Icon.astro';
 import { timeline } from '../data/company';
 ---
 
@@ -13,19 +14,21 @@ import { timeline } from '../data/company';
     />
 
     <div class="relative mt-20">
-      <div class="absolute bottom-0 left-4 top-0 w-px bg-gold-light lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></div>
+      <div class="absolute bottom-0 left-4 top-0 w-px bg-gradient-to-b from-gold-light via-gold to-gold-light lg:left-1/2 lg:-translate-x-1/2" aria-hidden="true"></div>
 
       <ol class="space-y-12 lg:space-y-16">
         {
           timeline.map((event, i) => (
             <li class="relative pl-12 lg:grid lg:grid-cols-2 lg:gap-12 lg:pl-0" data-reveal style={`animation-delay:${i * 100}ms`}>
               <span
-                class="absolute left-4 top-1 h-3 w-3 -translate-x-1/2 rounded-full border-2 border-gold-deep bg-white lg:left-1/2"
+                class="absolute left-4 top-6 flex h-9 w-9 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-4 border-white bg-gold shadow-soft lg:left-1/2"
                 aria-hidden="true"
-              />
+              >
+                <Icon name={event.icon} class="h-4 w-4 text-white" />
+              </span>
 
               <div class={i % 2 === 0 ? 'lg:col-start-1 lg:pr-16 lg:text-right' : 'lg:col-start-2 lg:pl-16'}>
-                <div class="rounded-3xl border border-ink/5 bg-cream p-6 shadow-soft sm:p-8">
+                <div class="rounded-3xl border border-gold-light/60 bg-cream p-6 shadow-soft sm:p-8">
                   <p class="font-display text-2xl font-semibold text-gold-deep">{event.year}</p>
                   <h3 class="mt-1 text-xl font-semibold text-ink">{event.title}</h3>
                   <p class="mt-2 leading-relaxed text-ink-soft">{event.description}</p>

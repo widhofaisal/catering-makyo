@@ -1,22 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Placeholder foto Catering Mak Yo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000" role="img" aria-label="Meja Prasmanan">
   <defs>
-    <linearGradient id="grad-gallery-8" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="grad-gallery-08" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FBF6EE" />
-      <stop offset="100%" stop-color="#E8D5A8" />
+      <stop offset="100%" stop-color="#DBE6D2" />
     </linearGradient>
   </defs>
-  <rect width="800" height="1000" fill="url(#grad-gallery-8)" />
-  <rect x="8" y="8" width="784" height="984" fill="none" stroke="#9C7A3C" stroke-opacity="0.35" stroke-width="1.5" />
-  <g transform="translate(288, 388) scale(2.24)" color="#9C7A3C">
-    
-  <g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M28 52 h44 a2 2 0 0 1 2 2 c0 12 -10 22 -24 22 s-24 -10 -24 -22 a2 2 0 0 1 2 -2 Z" />
-    <path d="M24 52 h52" />
-    <path d="M42 30 c-4 4 -4 8 0 12" />
-    <path d="M52 30 c-4 4 -4 8 0 12" />
-    <path d="M62 30 c-4 4 -4 8 0 12" />
+  <rect width="800" height="1000" fill="url(#grad-gallery-08)" />
+  <rect x="8" y="8" width="784" height="984" fill="none" stroke="#55703F" stroke-opacity="0.35" stroke-width="1.5" />
+  <circle cx="400" cy="450" r="172.79999999999998" fill="#55703F" fill-opacity="0.12" />
+  <g transform="translate(280, 330) scale(2.4)" fill="none" stroke="#55703F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M24 70 h52" />
+    <path d="M30 70 v-16 a20 20 0 0 1 40 0 v16" />
+    <path d="M50 32 v-8" />
   </g>
-
-  </g>
-  
+  <text x="400" y="720" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="600" fill="#55703F">Meja Prasmanan</text>
 </svg>

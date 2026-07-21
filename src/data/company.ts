@@ -15,6 +15,7 @@ export interface TimelineEvent {
   year: string;
   title: string;
   description: string;
+  icon: 'recipe' | 'star' | 'clock' | 'leaf' | 'award';
 }
 
 export interface WhyChooseUsItem {
@@ -83,26 +84,31 @@ export const timeline: TimelineEvent[] = [
     year: '1970',
     title: 'Awal Mula',
     description: 'Mak Yo mulai memasak untuk tetangga dari dapur rumahnya sendiri di Gunungpati.',
+    icon: 'recipe',
   },
   {
     year: '1980',
     title: 'Melayani Hajatan',
     description: 'Nama Mak Yo mulai dikenal luas saat dipercaya melayani pernikahan warga sekitar.',
+    icon: 'star',
   },
   {
     year: '1995',
     title: 'Merambah Perkantoran',
     description: 'Cita rasa rumahan Mak Yo mulai melayani kebutuhan katering harian perkantoran.',
+    icon: 'clock',
   },
   {
     year: '2010',
     title: 'Perluasan Layanan',
     description: 'Usaha terus diteruskan dan diperluas ke layanan aqiqah, tumpeng, dan acara korporat.',
+    icon: 'leaf',
   },
   {
     year: 'Hari Ini',
     title: 'Warisan yang Dipercaya',
     description: 'Kini Catering Mak Yo tetap dipercaya menghadirkan masakan rumahan untuk setiap momen keluarga Anda, warisan yang terus dijaga dari generasi ke generasi.',
+    icon: 'award',
   },
 ];
 
