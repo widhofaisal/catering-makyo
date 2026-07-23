@@ -1,4 +1,8 @@
-// ponytail: one-off research tool, not part of the shipped site. Run with `node scripts/scrape-gmb.mjs`.
+// ponytail: one-off research tool, not part of the shipped site — playwright
+// is intentionally NOT a persistent dependency (its Chromium download is
+// 600MB+ and breaks deploy builds). Run `npm install -D playwright && npx
+// playwright install chromium` first, then `node scripts/scrape-gmb.mjs`,
+// then `npm uninstall playwright` when done.
 import { chromium } from 'playwright';
 import { writeFileSync, mkdirSync } from 'node:fs';
 import path from 'node:path';

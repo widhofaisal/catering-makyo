@@ -1,4 +1,6 @@
 // ponytail: one-off tool to pull real photos off the Google Maps listing.
+// playwright is intentionally NOT a persistent dependency (see scrape-gmb.mjs) —
+// `npm install -D playwright && npx playwright install chromium` first.
 // v2: headed mode (headless can trigger Google's "limited view" fallback,
 // which hides most of the photo grid) + opens the full "Foto" gallery
 // instead of just the single hero image, and scrolls to lazy-load all tiles.
