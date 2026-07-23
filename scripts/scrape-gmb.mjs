@@ -8,7 +8,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR = path.join(__dirname, 'output');
 mkdirSync(OUT_DIR, { recursive: true });
 
-const MAPS_URL = 'https://maps.app.goo.gl/tT2QgQasdRXPtH4V6';
+const MAPS_URL = 'https://maps.app.goo.gl/UpTa1Upv6NZUyjXu7';
 
 function log(...args) {
   console.log(new Date().toISOString(), ...args);
@@ -108,8 +108,26 @@ async function extractHours(page) {
 async function extractReviews(page) {
   const reviews = [];
   try {
-    const reviewsTab = page.locator('button:has-text("Reviews"), button:has-text("Ulasan")').first();
-    await reviewsTab.click({ timeout: 8000 });
+    // Match the tab whose label is exactly "Ulasan"/"Reviews" — a loose
+    // has-text() substring match also catches "Tulis ulasan" (write a
+    // review), which opens a login-gated compose box instead of the list.
+    const tabs = page.locator('[role="tab"]');
+    const tabCount = await tabs.count();
+    let clicked = false;
+    for (let i = 0; i < tabCount; i++) {
+      const tab = tabs.nth(i);
+      const label = (await tab.innerText().catch(() => '')).trim();
+      if (/^(ulasan|reviews)$/i.test(label)) {
+        await tab.click({ timeout: 8000 });
+        log('Clicked reviews tab:', label);
+        clicked = true;
+        break;
+      }
+    }
+    if (!clicked) {
+      log('No exact "Ulasan"/"Reviews" tab found; tabs seen:', await tabs.allInnerTexts());
+      return reviews;
+    }
     await page.waitForTimeout(1500);
   } catch (e) {
     log('could not click reviews tab:', e.message);
@@ -176,7 +194,10 @@ async function extractPhotoUrls(page) {
 }
 
 async function main() {
-  const browser = await chromium.launch({ headless: true });
+  // Headless triggers Google's stripped-down "limited view" of Maps (fewer
+  // photos, no review interaction) — headed mode avoids that, same fix as
+  // scrape-photos.mjs.
+  const browser = await chromium.launch({ headless: false });
   const context = await browser.newContext({ locale: 'id-ID', viewport: { width: 1400, height: 1000 } });
   const page = await context.newPage();
 
@@ -203,6 +224,7 @@ async function main() {
   log('Wrote company.json:', JSON.stringify(company, null, 2));
 
   const reviews = await extractReviews(page);
+  await page.screenshot({ path: path.join(OUT_DIR, 'debug-reviews.png'), fullPage: false }).catch(() => {});
   writeFileSync(path.join(OUT_DIR, 'reviews.json'), JSON.stringify(reviews, null, 2));
   log(`Wrote reviews.json with ${reviews.length} reviews`);
 

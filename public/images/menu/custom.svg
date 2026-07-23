@@ -2,14 +2,14 @@
   <defs>
     <linearGradient id="grad-menu-custom" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FBF6EE" />
-      <stop offset="100%" stop-color="#E8D5A8" />
+      <stop offset="100%" stop-color="#F0D9C8" />
     </linearGradient>
   </defs>
   <rect width="800" height="600" fill="url(#grad-menu-custom)" />
-  <rect x="8" y="8" width="784" height="584" fill="none" stroke="#9C7A3C" stroke-opacity="0.35" stroke-width="1.5" />
-  <circle cx="400" cy="270" r="129.6" fill="#9C7A3C" fill-opacity="0.12" />
-  <g transform="translate(310, 180) scale(1.8)" fill="none" stroke="#9C7A3C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="8" y="8" width="784" height="584" fill="none" stroke="#A3441F" stroke-opacity="0.35" stroke-width="1.5" />
+  <circle cx="400" cy="270" r="129.6" fill="#A3441F" fill-opacity="0.12" />
+  <g transform="translate(310, 180) scale(1.8)" fill="none" stroke="#A3441F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
     <path d="M50 18 L57 43 L82 50 L57 57 L50 82 L43 57 L18 50 L43 43 Z" />
   </g>
-  <text x="400" y="432" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="600" fill="#9C7A3C">Custom Package</text>
+  <text x="400" y="432" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="600" fill="#A3441F">Custom Package</text>
 </svg>

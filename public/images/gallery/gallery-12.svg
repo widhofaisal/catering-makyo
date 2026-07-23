@@ -2,14 +2,14 @@
   <defs>
     <linearGradient id="grad-gallery-12" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#FBF6EE" />
-      <stop offset="100%" stop-color="#DBE6D2" />
+      <stop offset="100%" stop-color="#F0D9C8" />
     </linearGradient>
   </defs>
   <rect width="800" height="850" fill="url(#grad-gallery-12)" />
-  <rect x="8" y="8" width="784" height="834" fill="none" stroke="#55703F" stroke-opacity="0.35" stroke-width="1.5" />
-  <circle cx="400" cy="382.5" r="172.79999999999998" fill="#55703F" fill-opacity="0.12" />
-  <g transform="translate(280, 262.5) scale(2.4)" fill="none" stroke="#55703F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="8" y="8" width="784" height="834" fill="none" stroke="#A3441F" stroke-opacity="0.35" stroke-width="1.5" />
+  <circle cx="400" cy="382.5" r="172.79999999999998" fill="#A3441F" fill-opacity="0.12" />
+  <g transform="translate(280, 262.5) scale(2.4)" fill="none" stroke="#A3441F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
     <path d="M50 76 C32 61 23 48 23 36 a13 13 0 0 1 27 -6 a13 13 0 0 1 27 6 c0 12 -9 25 -27 40 Z" />
   </g>
-  <text x="400" y="612" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="600" fill="#55703F">Kebersamaan</text>
+  <text x="400" y="612" text-anchor="middle" font-family="'Plus Jakarta Sans', sans-serif" font-size="36" font-weight="600" fill="#A3441F">Kebersamaan</text>
 </svg>

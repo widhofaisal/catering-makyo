@@ -6,6 +6,17 @@ import { company, waLink } from '../data/company';
 
 const hasSocial = Boolean(company.social.instagram || company.social.facebook);
 const currentYear = new Date().getFullYear();
+
+// Stock dish photos used for menu categories without real photography yet
+// (see gallery.ts / menu.ts) — credited here as required by their CC BY /
+// CC BY-SA licenses. CC0 stock photos need no credit and aren't listed.
+const photoCredits = [
+  { title: 'Tumpeng Nasi Kuning', author: 'Rahayunita', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/w/index.php?curid=99348725' },
+  { title: 'Nasi kotak gudeg Wijilan', author: 'Midori', license: 'CC BY 3.0', url: 'https://commons.wikimedia.org/w/index.php?curid=13300443' },
+  { title: 'Rice box bento in Indonesia', author: 'Bajinra', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/w/index.php?curid=147750212' },
+  { title: 'Sotoayam', author: 'Andreanrama', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/w/index.php?curid=98824131' },
+  { title: 'Kue Lumpur Pandan', author: 'Alvian Choirur Rozaq', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/w/index.php?curid=148936572' },
+];
 ---
 
 <footer id="contact" class="bg-ink text-cream">
@@ -92,5 +103,18 @@ const currentYear = new Date().getFullYear();
         Lihat di Google Maps
       </a>
     </div>
+
+    <p class="mt-4 text-xs leading-relaxed text-cream/40">
+      Foto ilustrasi menu dari Wikimedia Commons:{' '}
+      {photoCredits.map((c, i) => (
+        <>
+          <a href={c.url} target="_blank" rel="noopener noreferrer" class="underline hover:text-cream/70">
+            {c.title}
+          </a>{' '}
+          oleh {c.author} ({c.license})
+          {i < photoCredits.length - 1 ? '; ' : '.'}
+        </>
+      ))}
+    </p>
   </Container>
 </footer>

@@ -83,13 +83,13 @@ export const timeline: TimelineEvent[] = [
   {
     year: '1970',
     title: 'Awal Mula',
-    description: 'Mak Yo mulai memasak untuk tetangga dari dapur rumahnya sendiri di Gunungpati.',
+    description: 'Mak Yo mulai memasak untuk tetangga dari dapur rumahnya sendiri di Gunungpati — lokasi yang bersebelahan langsung dengan Bumi Perkemahan, awal mula melayani konsumsi kegiatan kepramukaan yang berlanjut hingga sekarang.',
     icon: 'recipe',
   },
   {
     year: '1980',
     title: 'Melayani Hajatan',
-    description: 'Nama Mak Yo mulai dikenal luas saat dipercaya melayani pernikahan warga sekitar.',
+    description: 'Nama Mak Yo mulai dikenal luas saat dipercaya warga sekitar untuk konsumsi pernikahan, slametan, dan berbagai hajatan lainnya.',
     icon: 'star',
   },
   {

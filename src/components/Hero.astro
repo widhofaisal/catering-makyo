@@ -17,7 +17,7 @@ import { company, waLink } from '../data/company';
       <h1 class="load-fade-up font-display text-5xl font-semibold leading-tight text-ink sm:text-6xl lg:text-7xl" style="animation-delay:80ms">
         Catering Mak Yo
       </h1>
-      <p class="load-fade-up mt-5 font-display text-2xl text-green-deep sm:text-3xl" style="animation-delay:160ms">
+      <p class="load-fade-up mt-5 font-display text-2xl text-terracotta-deep sm:text-3xl" style="animation-delay:160ms">
         {company.tagline}
       </p>
       <p class="load-fade-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-soft lg:mx-0" style="animation-delay:240ms">
@@ -51,26 +51,13 @@ import { company, waLink } from '../data/company';
     </div>
 
     <div class="relative mx-auto flex justify-center">
-      <img
-        src="/images/hero/accent-1.svg"
-        alt=""
-        aria-hidden="true"
-        width="120"
-        height="120"
-        class="load-fade-up absolute -left-2 top-6 hidden w-28 rounded-2xl shadow-soft-lg sm:block"
-        style="animation-delay:280ms"
-      />
-      <img
-        src="/images/hero/accent-2.svg"
-        alt=""
-        aria-hidden="true"
-        width="120"
-        height="120"
-        class="load-fade-up absolute -right-4 bottom-10 hidden w-32 rounded-2xl shadow-soft-lg sm:block"
-        style="animation-delay:360ms"
-      />
       <div class="load-fade-up" style="animation-delay:200ms">
-        <GrandmaPortrait size={380} class="h-auto w-[280px] drop-shadow-2xl sm:w-[380px]" />
+        <GrandmaPortrait
+          size={380}
+          photoSrc="/images/hero/nenek.jpg"
+          photoAlt="Foto Mak Yo, pendiri Catering Mak Yo sejak 1970"
+          class="h-auto w-[280px] drop-shadow-2xl sm:w-[380px]"
+        />
       </div>
     </div>
   </Container>

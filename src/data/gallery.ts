@@ -6,19 +6,23 @@ export interface GalleryImage {
 }
 
 export const galleryImages: GalleryImage[] = [
-  // Real photo from the Google Maps listing (bihun goreng prasmanan tray). The
-  // rest are placeholders — swap them the same way as more real photos come in.
+  // Real photos pulled from the Google Maps listing's public photo gallery
+  // (Semua / Menu / Makanan & minuman / Oleh pemilik tabs) are captioned as
+  // Catering Mak Yo's own. The illustrative dish photos (credited below) are
+  // openly-licensed stock stand-ins for categories without real photos yet —
+  // captioned generically so they're never mistaken for the business's own
+  // photography. Swap either kind out for real photos as they come in.
   { src: '/images/gallery/gmb-bihun-goreng.jpg', alt: 'Bihun goreng prasmanan Catering Mak Yo, dari galeri Google Maps', width: 900, height: 1600 },
-  { src: '/images/gallery/gallery-01.svg', alt: 'Nasi box Catering Mak Yo siap diantar', width: 800, height: 700 },
-  { src: '/images/gallery/gallery-02.svg', alt: 'Prasmanan Catering Mak Yo di acara keluarga', width: 800, height: 1000 },
-  { src: '/images/gallery/gallery-03.svg', alt: 'Tumpeng syukuran Catering Mak Yo', width: 800, height: 900 },
-  { src: '/images/gallery/gallery-04.svg', alt: 'Suasana dapur Catering Mak Yo', width: 800, height: 1100 },
-  { src: '/images/gallery/gallery-05.svg', alt: 'Paket aqiqah Catering Mak Yo', width: 800, height: 650 },
-  { src: '/images/gallery/gallery-06.svg', alt: 'Katering pernikahan Catering Mak Yo', width: 800, height: 950 },
-  { src: '/images/gallery/gallery-07.svg', alt: 'Snack box Catering Mak Yo', width: 800, height: 800 },
-  { src: '/images/gallery/gallery-08.svg', alt: 'Meja prasmanan Catering Mak Yo tertata rapi', width: 800, height: 1000 },
-  { src: '/images/gallery/gallery-09.svg', alt: 'Detail hidangan rumahan Catering Mak Yo', width: 800, height: 650 },
-  { src: '/images/gallery/gallery-10.svg', alt: 'Katering acara korporat Catering Mak Yo', width: 800, height: 950 },
-  { src: '/images/gallery/gallery-11.svg', alt: 'Proses penyajian Catering Mak Yo', width: 800, height: 700 },
+  { src: '/images/gallery/nasi-kotak-gudeg.jpg', alt: 'Nasi kotak dengan gudeg, ilustrasi hidangan nasi box', width: 1600, height: 1200 },
+  { src: '/images/gallery/gmb-soto-daging-prasmanan.jpg', alt: 'Soto daging prasmanan Catering Mak Yo dalam mangkuk saji, dari galeri Google Maps', width: 900, height: 1600 },
+  { src: '/images/gallery/tumpeng-nasi-kuning.jpg', alt: 'Tumpeng nasi kuning, ilustrasi hidangan tumpeng syukuran', width: 1600, height: 1200 },
+  { src: '/images/gallery/gmb-lokasi-mak-yo.jpg', alt: 'Lokasi Catering Mak Yo di Gunungpati, Semarang, dari galeri Google Maps', width: 1171, height: 659 },
+  { src: '/images/gallery/aqiqah-prasmanan.jpg', alt: 'Hidangan rumahan lengkap, ilustrasi paket aqiqah', width: 1600, height: 900 },
+  { src: '/images/gallery/wedding-chafing.jpg', alt: 'Meja prasmanan chafing dish, ilustrasi katering pernikahan', width: 1024, height: 668 },
+  { src: '/images/gallery/snack-kue-lumpur.jpg', alt: 'Kue lumpur pandan, ilustrasi kudapan snack box', width: 1322, height: 1600 },
+  { src: '/images/gallery/gmb-buah-snack-prasmanan.jpg', alt: 'Buah dan snack prasmanan Catering Mak Yo, dari galeri Google Maps', width: 720, height: 1280 },
+  { src: '/images/gallery/gmb-ayam-kecap.jpg', alt: 'Ayam kecap prasmanan Catering Mak Yo, dari galeri Google Maps', width: 720, height: 1280 },
+  { src: '/images/gallery/nasi-kotak-korporat.jpg', alt: 'Nasi kotak kemasan rapi, ilustrasi katering korporat', width: 1600, height: 1034 },
+  { src: '/images/gallery/penyajian-soto.jpg', alt: 'Soto ayam yang ditata rapi, ilustrasi penyajian hidangan', width: 1280, height: 1600 },
   { src: '/images/gallery/gallery-12.svg', alt: 'Momen kebersamaan bersama Catering Mak Yo', width: 800, height: 850 },
 ];
