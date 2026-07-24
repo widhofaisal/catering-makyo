@@ -13,13 +13,18 @@ const { title, description = company.description, ogImage = '/og-image.jpg' } = 
 const canonicalURL = new URL(Astro.url.pathname, company.siteUrl);
 const ogImageURL = new URL(ogImage, company.siteUrl);
 
+const sameAs = [company.mapsShareUrl, company.social.instagram, company.social.facebook].filter(
+  (url): url is string => Boolean(url)
+);
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'FoodEstablishment',
   name: company.listingName,
-  alternateName: company.name,
-  description: company.description,
+  alternateName: ['Catering Mak Yo', 'Katering Mak Yo', 'Catering MakYo', 'Katering MakYo'],
+  description,
   url: company.siteUrl,
+  sameAs,
   telephone: company.phoneE164,
   servesCuisine: company.cuisine,
   foundingDate: String(company.foundedYear),

@@ -11,10 +11,12 @@ import CtaSection from '../components/CtaSection.astro';
 import Footer from '../components/Footer.astro';
 import { company } from '../data/company';
 
-const title = `${company.name} — ${company.tagline}`;
+const title = `${company.name} — Katering Rumahan Semarang Sejak 1970`;
+const description =
+  'Catering Mak Yo (Katering Mak Yo) Semarang — melayani hajatan, pernikahan, dan acara kantor sejak 1970 dengan masakan rumahan otentik. Rating 5.0 di Google Maps, siap antar se-Semarang.';
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <Navbar />
   <main id="main">
     <Hero />
