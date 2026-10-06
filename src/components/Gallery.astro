@@ -4,27 +4,33 @@ import SectionHeading from './ui/SectionHeading.astro';
 import { galleryImages } from '../data/gallery';
 ---
 
-<section id="gallery" class="bg-cream py-24 sm:py-32">
+<section id="gallery" class="bg-cream py-20 sm:py-28">
   <Container>
     <SectionHeading
-      eyebrow="Galeri"
-      title="Momen yang Kami Hadirkan"
-      subtitle="Sebagian dokumentasi hidangan dan acara yang telah dipercayakan kepada Catering Mak Yo."
+      eyebrow="Dari dapur dan acara Mak Yo"
+      title="Hidangan kami, apa adanya"
+      subtitle="Dokumentasi hidangan dan tempat Catering Mak Yo dari galeri Google Maps."
     />
 
-    <div class="mt-16 columns-1 gap-5 sm:columns-2 lg:columns-3 [&>*]:mb-5 [&>*]:break-inside-avoid">
+    <div class="mt-12 grid grid-cols-2 gap-3 sm:gap-5 lg:mt-16 lg:grid-cols-12">
       {
         galleryImages.map((image, i) => (
-          <div class="overflow-hidden rounded-2xl shadow-soft" data-reveal style={`animation-delay:${(i % 6) * 60}ms`}>
+          <figure class:list={[
+            'group relative overflow-hidden rounded-2xl bg-cream-dark shadow-soft sm:rounded-3xl',
+            i === 0 ? 'col-span-2 aspect-[16/10] lg:col-span-7 lg:row-span-2 lg:aspect-[1/1]' :
+            i === 1 ? 'col-span-1 aspect-square lg:col-span-5 lg:aspect-[5/3]' :
+            'col-span-1 aspect-square lg:col-span-5 lg:aspect-[5/3]',
+          ]} data-reveal style={`animation-delay:${(i % 5) * 60}ms`}>
             <img
               src={image.src}
               alt={image.alt}
               width={image.width}
               height={image.height}
               loading="lazy"
-              class="h-auto w-full object-cover transition-transform duration-500 hover:scale-105"
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
-          </div>
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/75 to-transparent px-4 pb-3 pt-10 text-xs font-medium text-white sm:px-5 sm:pb-4 sm:text-sm">{image.caption}</figcaption>
+          </figure>
         ))
       }
     </div>

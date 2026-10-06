@@ -6,37 +6,62 @@ import type { MenuCategory } from '../data/menu';
 interface Props {
   item: MenuCategory;
   index: number;
+  featured?: boolean;
 }
 
-const { item, index } = Astro.props;
+const { item, index, featured = false } = Astro.props;
 const message = `Halo, saya ingin tanya-tanya soal paket ${item.title} dari Catering Mak Yo.`;
 ---
 
 <article
-  class="group overflow-hidden rounded-3xl border border-ink/5 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-soft-lg"
+  class:list={[
+    'group relative overflow-hidden transition-all duration-300',
+    featured
+      ? 'grid rounded-[2rem] bg-white shadow-soft-lg lg:grid-cols-2 lg:rounded-[2.5rem]'
+      : 'rounded-2xl border-t border-terracotta/25 pt-4 hover:border-terracotta sm:rounded-3xl sm:pt-5',
+  ]}
   data-reveal
   style={`animation-delay:${(index % 4) * 80}ms`}
 >
-  <div class="aspect-[4/3] overflow-hidden">
+  <div class:list={[
+    'relative overflow-hidden bg-cream-dark',
+    featured ? 'aspect-[4/3] min-h-64 lg:aspect-auto lg:min-h-[26rem]' : 'aspect-[4/3] rounded-tl-[2rem] rounded-br-[2rem] sm:rounded-tl-[2.5rem] sm:rounded-br-[2.5rem]',
+  ]}>
     <img
       src={item.image}
       alt={item.imageAlt}
       width="800"
       height="600"
       loading="lazy"
-      class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
     />
+    {featured && <span class="absolute left-5 top-5 rounded-full bg-terracotta-deep px-4 py-2 text-[10px] font-bold uppercase tracking-[0.16em] text-cream shadow-soft sm:left-7 sm:top-7 sm:text-xs">Andalan Mak Yo</span>}
   </div>
-  <div class="p-6">
-    <h3 class="text-xl font-semibold text-ink">{item.title}</h3>
-    <p class="mt-2 text-sm leading-relaxed text-ink-soft">{item.description}</p>
+
+  <div class:list={[
+    'relative',
+    featured ? 'flex flex-col justify-center px-6 py-8 sm:px-10 sm:py-10 lg:px-14 lg:py-14' : 'pt-5 sm:pt-6',
+  ]}>
+    {featured && <span class="pointer-events-none absolute right-5 top-0 font-display text-8xl font-semibold leading-none text-terracotta/5 sm:right-8 sm:text-9xl" aria-hidden="true">01</span>}
+    {featured && <p class="relative mb-3 font-body text-xs font-bold uppercase tracking-[0.18em] text-terracotta-deep">Untuk kegiatan pramuka</p>}
+    <h3 class:list={[
+      'relative font-display font-semibold leading-tight text-ink',
+      featured ? 'max-w-lg text-3xl sm:text-4xl lg:text-5xl' : 'text-xl sm:text-2xl',
+    ]}>{item.title}</h3>
+    <p class:list={[
+      'relative mt-3 text-ink-soft',
+      featured ? 'max-w-lg text-sm leading-7 sm:mt-5 sm:text-base sm:leading-8' : 'text-sm leading-6',
+    ]}>{item.description}</p>
     <a
       href={waLink(message)}
       target="_blank"
       rel="noopener noreferrer"
-      class="mt-5 inline-flex items-center gap-2 font-body text-sm font-semibold text-gold-deep transition-colors hover:text-terracotta-deep"
+      class:list={[
+        'relative mt-5 inline-flex min-h-11 w-fit items-center gap-2 font-body text-sm font-semibold text-terracotta-deep transition-colors hover:text-gold-deep focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep',
+        featured && 'sm:mt-7',
+      ]}
     >
-      Tanya via WhatsApp
+      Tanya paket ini
       <Icon name="whatsapp" class="h-4 w-4" />
     </a>
   </div>

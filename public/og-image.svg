@@ -1,0 +1,14 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs><clipPath id="portrait"><circle cx="256" cy="315" r="154" /></clipPath></defs>
+  <rect width="1200" height="630" fill="#7C3216" />
+  <circle cx="1020" cy="85" r="270" fill="none" stroke="#E6C77D" stroke-opacity=".12" stroke-width="2" />
+  <circle cx="1020" cy="85" r="220" fill="none" stroke="#E6C77D" stroke-opacity=".10" stroke-width="2" />
+  <circle cx="256" cy="315" r="168" fill="#FBF6EE" />
+  <circle cx="256" cy="315" r="158" fill="#7C3216" />
+  <image href="/images/hero/nenek.jpg" x="102" y="161" width="308" height="308" preserveAspectRatio="xMidYMid slice" clip-path="url(#portrait)" />
+  <circle cx="256" cy="315" r="154" fill="none" stroke="#E8D5A8" stroke-width="5" />
+  <text x="500" y="270" fill="#FBF6EE" font-family="Georgia,serif" font-size="77" font-weight="bold">Catering Mak Yo</text>
+  <path d="M506 308h112" stroke="#E6C77D" stroke-width="5" />
+  <text x="500" y="365" fill="#E6C77D" font-family="Arial,sans-serif" font-size="29" letter-spacing="5">RASA RUMAH UNTUK ACARA BESAR</text>
+  <text x="500" y="430" fill="#FBF6EE" fill-opacity=".78" font-family="Arial,sans-serif" font-size="25">Warisan keluarga Semarang sejak 1970</text>
+</svg>

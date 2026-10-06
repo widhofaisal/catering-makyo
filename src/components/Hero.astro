@@ -2,62 +2,74 @@
 import Container from './ui/Container.astro';
 import Button from './ui/Button.astro';
 import Icon from './ui/Icon.astro';
-import GrandmaPortrait from './GrandmaPortrait.astro';
+import BrandMark from './BrandMark.astro';
 import { company, waLink } from '../data/company';
 ---
 
-<section id="home" class="relative overflow-hidden bg-cream pt-32 pb-24 sm:pt-40 sm:pb-32">
-  <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,var(--color-gold-light),transparent_55%)] opacity-40" aria-hidden="true"></div>
+<section id="home" class="relative isolate overflow-hidden bg-terracotta-deep pb-16 pt-32 text-cream sm:pb-20 sm:pt-36 lg:min-h-[720px] lg:pb-24 lg:pt-40">
+  <div class="pointer-events-none absolute -right-36 -top-24 h-[36rem] w-[36rem] rounded-full border border-gold-light/15" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -right-16 -top-8 h-[28rem] w-[28rem] rounded-full border border-gold-light/10" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -bottom-56 -left-24 h-[32rem] w-[32rem] rounded-full bg-terracotta/50 blur-3xl" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:radial-gradient(var(--color-gold-light)_0.7px,transparent_0.7px)] [background-size:18px_18px]" aria-hidden="true"></div>
 
-  <Container class="relative grid items-center gap-16 lg:grid-cols-2">
-    <div class="text-center lg:text-left">
-      <p class="load-fade-up mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-gold-deep" style="animation-delay:0ms">
-        Warisan Keluarga Sejak 1970
+  <Container class="relative grid min-w-0 grid-cols-1 items-center gap-12 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:gap-12">
+    <div class="relative z-10 min-w-0 text-center lg:py-8 lg:text-left">
+      <p class="mb-6 flex max-w-full flex-wrap items-center justify-center gap-2 font-body text-[11px] font-bold uppercase tracking-[0.15em] text-gold-light sm:text-sm sm:tracking-[0.2em] lg:justify-start">
+        <span class="h-px w-8 bg-gold-light" aria-hidden="true"></span>
+        <span>Semarang</span><span aria-hidden="true">&#183;</span><span>Warisan keluarga sejak 1970</span>
       </p>
-      <h1 class="load-fade-up font-display text-5xl font-semibold leading-tight text-ink sm:text-6xl lg:text-7xl" style="animation-delay:80ms">
-        Catering Mak Yo
+      <h1 class="mx-auto max-w-full break-words font-display text-[2.75rem] font-medium leading-[0.98] tracking-tight text-cream sm:text-6xl md:text-7xl lg:mx-0 lg:text-[4rem]">
+        Rasa rumah,<br />
+        <span class="font-semibold italic text-gold-light">untuk acara<br class="sm:hidden" /> besar.</span>
       </h1>
-      <p class="load-fade-up mt-5 font-display text-2xl text-terracotta-deep sm:text-3xl" style="animation-delay:160ms">
-        {company.tagline}
-      </p>
-      <p class="load-fade-up mx-auto mt-6 max-w-xl text-lg leading-relaxed text-ink-soft lg:mx-0" style="animation-delay:240ms">
-        {company.description}
+      <p class="mx-auto mt-7 max-w-xl text-base leading-8 text-cream/75 sm:text-lg lg:mx-0">
+        Dari hajatan keluarga hingga kegiatan pramuka dan perkemahan, hidangan Mak Yo disiapkan dengan resep yang sudah menemani banyak generasi.
       </p>
 
-      <div class="load-fade-up mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start" style="animation-delay:320ms">
-        <Button href={waLink('Halo, saya ingin memesan Catering Mak Yo.')} target="_blank" rel="noopener noreferrer">
+      <div class="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+        <Button href={waLink('Halo, saya ingin memesan Catering Mak Yo.')} target="_blank" rel="noopener noreferrer" class="w-full !bg-cream !text-terracotta-deep shadow-soft-lg hover:!bg-gold-light sm:w-auto">
           <Icon name="whatsapp" class="h-5 w-5" />
-          Pesan Sekarang
+          Pesan melalui WhatsApp
         </Button>
-        <Button href="#menu" variant="secondary">
-          Lihat Menu
-        </Button>
+        <Button href="#menu" variant="ghost" class="w-full !text-cream hover:!text-gold-light sm:w-auto">Jelajahi layanan <span aria-hidden="true">↓</span></Button>
       </div>
 
-      <div class="load-fade-up mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-ink-soft lg:justify-start" style="animation-delay:400ms">
-        <span class="flex items-center gap-2">
-          <Icon name="star" class="h-4 w-4 text-gold" />
-          <strong class="text-ink">{company.rating.value.toFixed(1)}</strong> rating di {company.rating.source}
-        </span>
-        {
-          company.womenOwned && (
-            <span class="flex items-center gap-2">
-              <Icon name="award" class="h-4 w-4 text-gold" />
-              Usaha milik perempuan
-            </span>
-          )
-        }
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-4 border-t border-cream/20 pt-6 text-left lg:justify-start">
+        <div class="flex items-center gap-3">
+          <span class="font-display text-3xl font-semibold text-gold-light">50+</span>
+          <span class="max-w-20 text-xs leading-4 text-cream/70">tahun menjaga resep keluarga</span>
+        </div>
+        <span class="hidden h-9 w-px bg-cream/20 sm:block" aria-hidden="true"></span>
+        <a href={company.mapsShareUrl} target="_blank" rel="noopener noreferrer" class="group flex items-center gap-2 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-light" aria-label={`Rating ${company.rating.value.toFixed(1)} di Google Maps, buka lokasi dan ulasan`}>
+          <span class="font-display text-3xl font-semibold text-gold-light">{company.rating.value.toFixed(1)}</span>
+          <span>
+            <span class="flex gap-0.5 text-gold-light" aria-hidden="true">{Array.from({ length: 5 }).map(() => <Icon name="star" class="h-3.5 w-3.5" />)}</span>
+            <span class="text-xs text-cream/70 group-hover:text-cream">Rating Google Maps</span>
+          </span>
+        </a>
       </div>
     </div>
 
-    <div class="relative mx-auto flex justify-center">
-      <div class="load-fade-up" style="animation-delay:200ms">
-        <GrandmaPortrait
-          size={380}
-          photoSrc="/images/hero/nenek.jpg"
-          photoAlt="Foto Mak Yo, pendiri Catering Mak Yo sejak 1970"
-          class="h-auto w-[280px] drop-shadow-2xl sm:w-[380px]"
+    <div class="mx-auto w-full max-w-[34rem] pl-3 sm:pl-5 lg:ml-auto lg:mr-0">
+      <figure class="overflow-hidden rounded-[1.75rem] bg-ink sm:rounded-[2rem]">
+        <img
+          src="/images/hero/hero-buffet.webp"
+          alt="Meja prasmanan berisi ayam kecap, nasi, sayuran, dan sambal"
+          width="1456"
+          height="1024"
+          fetchpriority="high"
+          class="aspect-[4/3] w-full object-cover"
         />
+      </figure>
+      <div class="mt-4 flex flex-wrap items-center justify-between gap-3 sm:mt-5">
+        <figcaption class="min-w-0 flex-1 font-display text-sm italic text-cream/80 sm:text-base">Sajian rumahan untuk kebersamaan</figcaption>
+        <div class="flex shrink-0 items-center gap-2.5 rounded-full border border-gold-light/60 bg-cream px-3 py-2 text-ink sm:gap-3 sm:px-4">
+          <BrandMark size={44} />
+          <div>
+            <p class="font-display text-sm font-semibold sm:text-base">Mak Yo</p>
+            <p class="text-[9px] font-semibold uppercase tracking-[0.12em] text-terracotta sm:text-[10px]">Sejak 1970</p>
+          </div>
+        </div>
       </div>
     </div>
   </Container>

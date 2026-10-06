@@ -2,37 +2,38 @@
 import Container from './ui/Container.astro';
 import Button from './ui/Button.astro';
 import Icon from './ui/Icon.astro';
-import GrandmaPortrait from './GrandmaPortrait.astro';
+import BrandMark from './BrandMark.astro';
 import { waLink } from '../data/company';
 
 const navLinks = [
-  { href: '#home', label: 'Home' },
-  { href: '#about', label: 'About' },
-  { href: '#menu', label: 'Menu' },
-  { href: '#gallery', label: 'Gallery' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#home', label: 'Beranda' },
+  { href: '#about', label: 'Kisah Mak Yo' },
+  { href: '#menu', label: 'Layanan' },
+  { href: '#gallery', label: 'Galeri' },
+  { href: '#testimonials', label: 'Ulasan' },
+  { href: '#contact', label: 'Kontak' },
 ];
 ---
 
 <header
   data-navbar
-  class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-all duration-300 [&.is-scrolled]:border-ink/5 [&.is-scrolled]:bg-white/80 [&.is-scrolled]:shadow-soft [&.is-scrolled]:backdrop-blur-lg"
+  class="fixed inset-x-0 top-0 z-50 border-b border-cream/10 bg-terracotta-deep/95 text-cream shadow-soft transition-all duration-300 [&.is-scrolled]:border-ink/10 [&.is-scrolled]:bg-cream/95 [&.is-scrolled]:shadow-soft [&.is-scrolled]:backdrop-blur-lg"
 >
   <Container>
     <nav class="flex items-center justify-between py-4" aria-label="Navigasi utama">
-      <a href="#home" class="flex items-center gap-3 font-display text-lg font-semibold text-ink">
-        <GrandmaPortrait size={40} showRibbon={false} class="shrink-0" />
+      <a href="#home" data-nav-brand class="flex items-center gap-3 font-display text-base font-semibold text-cream sm:text-lg">
+        <BrandMark size={40} class="shrink-0" />
         <span>Catering Mak Yo</span>
       </a>
 
-      <ul class="hidden items-center gap-8 md:flex">
+      <ul class="hidden items-center gap-6 lg:flex xl:gap-8">
         {
           navLinks.map((link) => (
             <li>
               <a
                 href={link.href}
-                class="font-body text-sm font-medium text-ink-soft transition-colors hover:text-gold-deep"
+                data-nav-link
+                class="font-body text-sm font-semibold text-cream/80 transition-colors hover:text-gold-light"
               >
                 {link.label}
               </a>
@@ -41,8 +42,8 @@ const navLinks = [
         }
       </ul>
 
-      <div class="hidden md:block">
-        <Button href={waLink('Halo, saya ingin memesan Catering Mak Yo.')} target="_blank" rel="noopener noreferrer" class="!py-2.5 !px-5 text-sm">
+      <div class="hidden lg:block">
+        <Button href={waLink('Halo, saya ingin memesan Catering Mak Yo.')} target="_blank" rel="noopener noreferrer" class="border border-terracotta/15 !bg-cream !py-2.5 !px-5 !text-sm !text-terracotta-deep shadow-soft hover:!bg-gold-light">
           Pesan Sekarang
         </Button>
       </div>
@@ -53,7 +54,7 @@ const navLinks = [
         aria-expanded="false"
         aria-controls="mobile-nav-panel"
         aria-label="Buka menu navigasi"
-        class="group flex h-11 w-11 items-center justify-center rounded-xl border border-ink/10 text-ink md:hidden"
+        class="group flex h-11 w-11 items-center justify-center rounded-xl border border-cream/25 text-cream transition-colors lg:hidden"
       >
         <Icon name="menu" class="h-5 w-5 group-aria-expanded:hidden" />
         <Icon name="close" class="hidden h-5 w-5 group-aria-expanded:block" />
@@ -64,7 +65,7 @@ const navLinks = [
   <div
     id="mobile-nav-panel"
     data-nav-panel
-    class="max-h-0 overflow-hidden bg-white/95 backdrop-blur-lg transition-[max-height] duration-300 [&.is-open]:max-h-96 md:hidden"
+    class="max-h-0 overflow-hidden bg-terracotta-deep transition-[max-height] duration-300 [&.is-open]:max-h-[30rem] lg:hidden"
   >
     <Container>
       <ul class="flex flex-col gap-1 py-4">
@@ -73,7 +74,8 @@ const navLinks = [
             <li>
               <a
                 href={link.href}
-                class="block rounded-xl px-3 py-3 font-body text-base font-medium text-ink transition-colors hover:bg-cream hover:text-gold-deep"
+                data-nav-mobile-link
+                class="block rounded-xl px-3 py-3 font-body text-base font-medium text-cream/85 transition-colors hover:bg-white/10 hover:text-white"
               >
                 {link.label}
               </a>

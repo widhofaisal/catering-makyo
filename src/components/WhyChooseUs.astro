@@ -5,25 +5,35 @@ import IconCard from './ui/IconCard.astro';
 import { whyChooseUs } from '../data/company';
 ---
 
-<section class="bg-cream py-24 sm:py-32">
+<section class="bg-white py-20 sm:py-28">
   <Container>
-    <SectionHeading
-      eyebrow="Mengapa Memilih Kami"
-      title="Kepercayaan yang Dijaga Lebih dari 50 Tahun"
-      subtitle="Setiap hidangan dibuat dengan standar yang sama sejak Mak Yo pertama kali memasak untuk tetangganya."
-    />
+    <div class="relative overflow-hidden rounded-[2rem] bg-ink px-6 py-9 shadow-soft-lg sm:rounded-[2.5rem] sm:px-10 sm:py-12 lg:px-14 lg:py-16">
+      <div class="pointer-events-none absolute -right-32 -top-40 h-96 w-96 rounded-full border border-gold-light/20" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -right-16 -top-24 h-64 w-64 rounded-full border border-gold-light/15" aria-hidden="true"></div>
+      <div class="relative">
+        <SectionHeading
+          align="left"
+          tone="dark"
+          eyebrow="Yang kami jaga"
+          title="Rasa rumahan dengan perhatian penuh"
+          subtitle="Resep keluarga, bahan yang dipilih dengan cermat, dan pelayanan yang membantu acara berjalan lebih tenang."
+          class="max-w-3xl"
+        />
 
-    <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {
-        whyChooseUs.map((item, i) => (
-          <IconCard
-            icon={item.icon}
-            title={item.title}
-            description={item.description}
-            style={`animation-delay:${i * 80}ms`}
-          />
-        ))
-      }
+        <div class="mt-8 grid gap-x-10 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-x-14">
+          {
+            whyChooseUs.map((item, i) => (
+              <IconCard
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                inverse
+                style={`animation-delay:${i * 80}ms`}
+              />
+            ))
+          }
+        </div>
+      </div>
     </div>
   </Container>
 </section>

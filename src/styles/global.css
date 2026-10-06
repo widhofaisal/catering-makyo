@@ -8,8 +8,8 @@
   --color-cream: #fbf6ee;
   --color-cream-dark: #f3ead9;
 
-  --color-gold: #c29a4b;
-  --color-gold-deep: #9c7a3c;
+  --color-gold: #b38a3d;
+  --color-gold-deep: #80612d;
   --color-gold-light: #e8d5a8;
 
   --color-terracotta: #a3441f;
@@ -25,8 +25,8 @@
   --radius-2xl: 1.5rem;
   --radius-3xl: 2rem;
 
-  --shadow-soft: 0 4px 24px -4px rgb(51 49 46 / 0.08);
-  --shadow-soft-lg: 0 12px 48px -12px rgb(51 49 46 / 0.16);
+  --shadow-soft: 0 8px 26px -10px rgb(51 49 46 / 0.16);
+  --shadow-soft-lg: 0 20px 50px -18px rgb(51 49 46 / 0.25);
 }
 
 @layer base {
@@ -39,6 +39,8 @@
     background-color: var(--color-white);
     color: var(--color-ink);
     font-family: var(--font-body);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1,
@@ -89,6 +91,36 @@
 
   .skip-link:focus {
     top: 1rem;
+  }
+
+  [data-navbar].is-scrolled [data-nav-brand] {
+    color: var(--color-ink);
+  }
+
+  [data-navbar].is-scrolled [data-nav-link] {
+    color: var(--color-ink-soft);
+  }
+
+  [data-navbar].is-scrolled [data-nav-link]:hover {
+    color: var(--color-terracotta-deep);
+  }
+
+  [data-navbar].is-scrolled [data-nav-toggle] {
+    border-color: rgb(51 49 46 / 0.15);
+    color: var(--color-ink);
+  }
+
+  [data-navbar].is-scrolled [data-nav-panel] {
+    background-color: var(--color-cream);
+  }
+
+  [data-navbar].is-scrolled [data-nav-mobile-link] {
+    color: var(--color-ink-soft);
+  }
+
+  [data-navbar].is-scrolled [data-nav-mobile-link]:hover {
+    background-color: var(--color-cream-dark);
+    color: var(--color-terracotta-deep);
   }
 }
 

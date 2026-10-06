@@ -1,22 +1,12 @@
 ---
 import Container from './ui/Container.astro';
 import Icon from './ui/Icon.astro';
-import GrandmaPortrait from './GrandmaPortrait.astro';
+import BrandMark from './BrandMark.astro';
 import { company, waLink } from '../data/company';
 
 const hasSocial = Boolean(company.social.instagram || company.social.facebook);
 const currentYear = new Date().getFullYear();
 
-// Stock dish photos used for menu categories without real photography yet
-// (see gallery.ts / menu.ts) — credited here as required by their CC BY /
-// CC BY-SA licenses. CC0 stock photos need no credit and aren't listed.
-const photoCredits = [
-  { title: 'Tumpeng Nasi Kuning', author: 'Rahayunita', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/w/index.php?curid=99348725' },
-  { title: 'Nasi kotak gudeg Wijilan', author: 'Midori', license: 'CC BY 3.0', url: 'https://commons.wikimedia.org/w/index.php?curid=13300443' },
-  { title: 'Rice box bento in Indonesia', author: 'Bajinra', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/w/index.php?curid=147750212' },
-  { title: 'Sotoayam', author: 'Andreanrama', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/w/index.php?curid=98824131' },
-  { title: 'Kue Lumpur Pandan', author: 'Alvian Choirur Rozaq', license: 'CC BY-SA 4.0', url: 'https://commons.wikimedia.org/w/index.php?curid=148936572' },
-];
 ---
 
 <footer id="contact" class="bg-ink text-cream">
@@ -24,7 +14,7 @@ const photoCredits = [
     <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
       <div>
         <div class="flex items-center gap-3">
-          <GrandmaPortrait size={44} showRibbon={false} class="shrink-0" />
+          <BrandMark size={44} class="shrink-0" />
           <span class="font-display text-xl font-semibold text-white">Catering Mak Yo</span>
         </div>
         <p class="mt-4 max-w-md leading-relaxed text-cream/70">{company.description}</p>
@@ -97,24 +87,12 @@ const photoCredits = [
       </div>
     </div>
 
-    <div class="mt-16 flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 text-sm text-cream/60 sm:flex-row">
+    <div class="flex flex-col items-center justify-between gap-4 border-t border-cream/10 pt-8 text-sm text-cream/60 sm:flex-row">
       <p>&copy; {currentYear} {company.name}. Semua hak dilindungi.</p>
       <a href={company.mapsShareUrl} target="_blank" rel="noopener noreferrer" class="hover:text-gold">
         Lihat di Google Maps
       </a>
     </div>
 
-    <p class="mt-4 text-xs leading-relaxed text-cream/40">
-      Foto ilustrasi menu dari Wikimedia Commons:{' '}
-      {photoCredits.map((c, i) => (
-        <>
-          <a href={c.url} target="_blank" rel="noopener noreferrer" class="underline hover:text-cream/70">
-            {c.title}
-          </a>{' '}
-          oleh {c.author} ({c.license})
-          {i < photoCredits.length - 1 ? '; ' : '.'}
-        </>
-      ))}
-    </p>
   </Container>
 </footer>

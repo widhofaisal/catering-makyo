@@ -2,8 +2,8 @@
  * Single source of truth for business info. Verified against the live Google
  * Maps listing on 2026-07-20 (name, rating, address, phone, hours) — see
  * scripts/scrape-gmb.mjs. Fields the listing didn't expose (review text,
- * extra photos) are intentionally absent rather than invented; testimonials
- * and gallery images are curated placeholders (see testimonials.ts / gallery.ts).
+ * extra business details are intentionally absent rather than invented.
+ * Customer quotes are omitted until verified review text is available.
  */
 
 export interface DayHours {
