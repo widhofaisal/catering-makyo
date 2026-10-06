@@ -26,14 +26,19 @@ const currentYear = new Date().getFullYear();
           </div>
           <div class="flex items-start gap-3">
             <Icon name="phone" class="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-            <dd>
-              <a href={`tel:${company.phoneE164}`} class="hover:text-gold">{company.phoneDisplay}</a>
+            <dd class="space-y-1">
+              {company.contactPhones.map((contact) => (
+                <div>
+                  <span>{contact.name}: </span>
+                  <a href={`tel:${contact.e164}`} class="whitespace-nowrap hover:text-gold">{contact.display}</a>
+                </div>
+              ))}
             </dd>
           </div>
           <div class="flex items-start gap-3">
             <Icon name="whatsapp" class="mt-0.5 h-5 w-5 shrink-0 text-gold" />
             <dd>
-              <a href={waLink('Halo, saya ingin bertanya tentang Catering Mak Yo.')} target="_blank" rel="noopener noreferrer" class="hover:text-gold">
+              <a href={waLink('Halo, saya ingin bertanya tentang Catering Mak Yo.')} target="_blank" rel="noopener noreferrer" data-wa-chooser data-wa-message="Halo, saya ingin bertanya tentang Catering Mak Yo." class="hover:text-gold">
                 Chat WhatsApp
               </a>
             </dd>

@@ -6,6 +6,8 @@ interface Props {
   target?: string;
   rel?: string;
   'aria-label'?: string;
+  'data-wa-chooser'?: boolean;
+  'data-wa-message'?: string;
 }
 
 const {
@@ -15,6 +17,8 @@ const {
   target,
   rel,
   'aria-label': ariaLabel,
+  'data-wa-chooser': waChooser,
+  'data-wa-message': waMessage,
 } = Astro.props;
 
 const base =
@@ -32,6 +36,6 @@ const classes = [base, variants[variant], className].join(' ');
 const Tag = href ? 'a' : 'button';
 ---
 
-<Tag class={classes} href={href} target={target} rel={rel} aria-label={ariaLabel}>
+<Tag class={classes} href={href} target={target} rel={rel} aria-label={ariaLabel} data-wa-chooser={waChooser} data-wa-message={waMessage}>
   <slot />
 </Tag>

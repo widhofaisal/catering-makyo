@@ -50,6 +50,10 @@ export const company = {
 
   phoneDisplay: '0895-4035-78925',
   phoneE164: '+62895403578925',
+  contactPhones: [
+    { name: 'Bu Darsih', display: '0895-4035-78925', e164: '+62895403578925' },
+    { name: 'Bu Mimik', display: '0856-4034-0483', e164: '+6285640340483' },
+  ],
   whatsappNumber: '62895403578925',
 
   hours: [

@@ -56,6 +56,8 @@ const message = `Halo, saya ingin tanya-tanya soal paket ${item.title} dari Cate
       href={waLink(message)}
       target="_blank"
       rel="noopener noreferrer"
+      data-wa-chooser
+      data-wa-message={message}
       class:list={[
         'relative mt-5 inline-flex min-h-11 w-fit items-center gap-2 font-body text-sm font-semibold text-terracotta-deep transition-colors hover:text-gold-deep focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-deep',
         featured && 'sm:mt-7',

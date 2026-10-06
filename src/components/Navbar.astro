@@ -43,7 +43,7 @@ const navLinks = [
       </ul>
 
       <div class="hidden lg:block">
-        <Button href={waLink('Halo, saya ingin memesan Catering Mak Yo.')} target="_blank" rel="noopener noreferrer" class="border border-terracotta/15 !bg-cream !py-2.5 !px-5 !text-sm !text-terracotta-deep shadow-soft hover:!bg-gold-light">
+        <Button href={waLink('Halo, saya ingin memesan Catering Mak Yo.')} target="_blank" rel="noopener noreferrer" data-wa-chooser data-wa-message="Halo, saya ingin memesan Catering Mak Yo." class="border border-terracotta/15 !bg-cream !py-2.5 !px-5 !text-sm !text-terracotta-deep shadow-soft hover:!bg-gold-light">
           Pesan Sekarang
         </Button>
       </div>
@@ -87,6 +87,8 @@ const navLinks = [
             href={waLink('Halo, saya ingin memesan Catering Mak Yo.')}
             target="_blank"
             rel="noopener noreferrer"
+            data-wa-chooser
+            data-wa-message="Halo, saya ingin memesan Catering Mak Yo."
             class="w-full"
           >
             Pesan Sekarang

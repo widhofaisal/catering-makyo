@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { company } from '../data/company';
+import WhatsAppChooser from '../components/WhatsAppChooser.astro';
 
 interface Props {
   title: string;
@@ -90,6 +91,7 @@ const jsonLd = {
   <body>
     <a href="#main" class="skip-link">Langsung ke konten utama</a>
     <slot />
+    <WhatsAppChooser />
     <script src="../scripts/reveal.ts"></script>
   </body>
 </html>
